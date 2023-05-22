@@ -22,6 +22,9 @@ describe('Get Question By Slug', () => {
     })
 
     expect(result.isRight()).toBe(true)
-    expect(result.value?.question).toEqual(newQuestion)
+
+    if (result.isRight()) {
+      expect(result.value.question).toEqual(newQuestion)
+    }
   })
 })
